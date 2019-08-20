@@ -3,6 +3,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
+import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
@@ -24,14 +25,6 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
 
     public static void main(String args[]) {
         launch(args);
-    }
-
-    private void cleanup(){
-        label.setText("");
-        for(int i=0; i<9; i++) {
-            buttons[i].setState(0);
-            buttons[i].setDisable(false);
-        }
     }
 
     private void startGame(Stage stage) {
@@ -81,31 +74,39 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
 
         Button newGame = new Button("New Game");
         newGame.setOnAction(event -> {
-            restart(stage);
+            label.setText("");
+            for(int i=0; i<9; i++) {
+                buttons[i].setState(0);
+                buttons[i].setDisable(false);
+            }
         });
         newGame.setPrefSize(200, 40);
+        newGame.setOnMouseEntered(event -> {
+            newGame.setCursor(Cursor.HAND);
+        });
+        newGame.setOnMouseExited(event -> {
+            newGame.setCursor(Cursor.DEFAULT);
+        });
+
         VBox tool = new VBox(newGame);
-        tool.setPadding(new Insets(0,0,0,0));
 
         StackPane root = new StackPane();
         root.getChildren().addAll(tool, hBox, grid);
 
         Scene scene = new Scene(root, 600, 640);
 
-        Button single = new Button();
+        Button single = new Button("Player VS Computer");
         single.setOnAction(event -> stage.setScene(scene));
         single.setPrefSize(200,50);
         single.setFont(Font.font("Arial", FontWeight.BOLD, 18));
-        single.setText("Player VS Computer");
 
-        Button multi = new Button();
+        Button multi = new Button("Player VS Player");
         multi.setOnAction(event -> {
             singlePlayer = false;
             stage.setScene(scene);
         });
         multi.setPrefSize(200,50);
         multi.setFont(Font.font("Arial", FontWeight.BOLD, 18));
-        multi.setText("Player VS Player");
 
         VBox vBox = new VBox();
         vBox.getChildren().addAll(single, multi);
@@ -126,11 +127,6 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
         stage.setResizable(false);
         stage.setScene(main);
         stage.show();
-    }
-
-    private void restart(Stage stage) {
-        cleanup();
-        startGame(stage);
     }
 
     @Override
@@ -371,7 +367,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[2].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -391,7 +387,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[5].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -411,7 +407,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[8].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -431,7 +427,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[6].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -451,7 +447,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[7].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -471,7 +467,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[8].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -491,7 +487,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[8].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -511,7 +507,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[6].setState(-1);
                 checkScore();
             } else {
-                for(int x=0; x<100; x++) {
+                for(int x=0; x<200; x++) {
                     int random = generator.nextInt(9);
                     if(buttons[random].getState() == 0) {
                         buttons[random].setState(-1);
@@ -521,7 +517,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 }
             }
         } else {
-            for(int x=0; x<100; x++) {
+            for(int x=0; x<200; x++) {
                 int random = generator.nextInt(9);
                 if(buttons[random].getState() == 0) {
                     buttons[random].setState(-1);

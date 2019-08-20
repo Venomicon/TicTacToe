@@ -22,17 +22,28 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
     private String p1 = "Player";
     private String p2 = "COM";
     private boolean playerTurn = true;
+    private int score1 = 0;
+    private int score2 = 0;
+    private Label score = new Label(score1 + " - " + score2);
 
     public static void main(String args[]) {
         launch(args);
     }
 
     private void startGame(Stage stage) {
-        HBox hBox = new HBox(label);
-        hBox.setAlignment(Pos.TOP_CENTER);
-        hBox.setPadding(new Insets(10, 0, 0, 200));
+    //HBox:
+        HBox scoreBox = new HBox(score);
+        scoreBox.setAlignment(Pos.TOP_CENTER);
+        scoreBox.setPadding(new Insets(10, 0, 0, 0));
+        score.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, 20));
+
+    //HBox:
+        HBox labelBox = new HBox(label);
+        labelBox.setAlignment(Pos.TOP_CENTER);
+        labelBox.setPadding(new Insets(10, 0, 0, 410));
         label.setFont(Font.font("Arial", FontWeight.EXTRA_BOLD, 20));
 
+    //Grid:
         grid.setGridLinesVisible(true);
         grid.setPrefWidth(200);
         grid.setPrefHeight(200);
@@ -72,6 +83,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
         grid.add(b8, 1, 2);
         grid.add(b9, 2, 2);
 
+    //HBox:
         Button newGame = new Button("New Game");
         newGame.setOnAction(event -> {
             label.setText("");
@@ -80,7 +92,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 buttons[i].setDisable(false);
             }
         });
-        newGame.setPrefSize(200, 40);
+        newGame.setPrefSize(100, 40);
         newGame.setOnMouseEntered(event -> {
             newGame.setCursor(Cursor.HAND);
         });
@@ -88,13 +100,29 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             newGame.setCursor(Cursor.DEFAULT);
         });
 
-        VBox tool = new VBox(newGame);
+        Button resetScore = new Button("Reset Score");
+        resetScore.setOnAction(event -> {
+            score1 = 0;
+            score2 = 0;
+            label.setText(score1 + " - " + score2);
+        });
+        resetScore.setPrefSize(100,40);
+        resetScore.setOnMouseEntered(event -> {
+            resetScore.setCursor(Cursor.HAND);
+        });
+        resetScore.setOnMouseExited(event -> {
+            resetScore.setCursor(Cursor.DEFAULT);
+        });
+
+
+        HBox tool = new HBox(newGame, resetScore);
 
         StackPane root = new StackPane();
-        root.getChildren().addAll(tool, hBox, grid);
+        root.getChildren().addAll(tool, scoreBox, labelBox, grid);
 
         Scene scene = new Scene(root, 600, 640);
 
+    //Main menu:
         Button single = new Button("Player VS Computer");
         single.setOnAction(event -> stage.setScene(scene));
         single.setPrefSize(200,50);
@@ -166,12 +194,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[0].getState() + buttons[1].getState() + buttons[2].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Row 2:
         if(buttons[3].getState() + buttons[4].getState() + buttons[5].getState() == 3) {
@@ -179,12 +211,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[3].getState() + buttons[4].getState() + buttons[5].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Row 3:
         if(buttons[6].getState() + buttons[7].getState() + buttons[8].getState() == 3) {
@@ -192,12 +228,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[6].getState() + buttons[7].getState() + buttons[8].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Column 1:
         if(buttons[0].getState() + buttons[3].getState() + buttons[6].getState() == 3) {
@@ -205,12 +245,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[0].getState() + buttons[3].getState() + buttons[6].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Column 2:
         if(buttons[1].getState() + buttons[4].getState() + buttons[7].getState() == 3) {
@@ -218,12 +262,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[1].getState() + buttons[4].getState() + buttons[7].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Column 3:
         if(buttons[2].getState() + buttons[5].getState() + buttons[8].getState() == 3) {
@@ -231,12 +279,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[2].getState() + buttons[5].getState() + buttons[8].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Diagonal 1:
         if(buttons[0].getState() + buttons[4].getState() + buttons[8].getState() == 3) {
@@ -244,12 +296,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[0].getState() + buttons[4].getState() + buttons[8].getState() == -3) {
             label.setText(p2 + " won!");
             for (int i = 0; i < 9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Diagonal 2:
         if(buttons[2].getState() + buttons[4].getState() + buttons[6].getState() == 3) {
@@ -257,12 +313,16 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score1++;
+            score.setText(score1 + " - " + score2);
         }
         if(buttons[2].getState() + buttons[4].getState() + buttons[6].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
             }
+            score2++;
+            score.setText(score1 + " - " + score2);
         }
         //Tie:
     }

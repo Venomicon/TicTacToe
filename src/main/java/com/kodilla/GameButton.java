@@ -31,4 +31,13 @@ public class GameButton extends Button {
     public int getState() {
         return state;
     }
+
+    /*for(int x=0; x<200; x++) {
+        int random = generator.nextInt(9);
+        if(buttons[random].getState() == 0) {
+            buttons[random].setState(-1);
+            checkScore();
+            break;
+        }
+    }*/
 }

@@ -216,7 +216,8 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             }
             score1++;
             score.setText(score1 + " - " + score2);
-        } else if(buttons[0].getState() + buttons[1].getState() + buttons[2].getState() == -3) {
+        }
+        if(buttons[0].getState() + buttons[1].getState() + buttons[2].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -225,7 +226,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Row 2:
-        else if(buttons[3].getState() + buttons[4].getState() + buttons[5].getState() == 3) {
+        if(buttons[3].getState() + buttons[4].getState() + buttons[5].getState() == 3) {
             label.setText(p1 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -233,7 +234,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score1++;
             score.setText(score1 + " - " + score2);
         }
-        else if(buttons[3].getState() + buttons[4].getState() + buttons[5].getState() == -3) {
+        if(buttons[3].getState() + buttons[4].getState() + buttons[5].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -242,7 +243,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Row 3:
-        else if(buttons[6].getState() + buttons[7].getState() + buttons[8].getState() == 3) {
+        if(buttons[6].getState() + buttons[7].getState() + buttons[8].getState() == 3) {
             label.setText(p1 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -250,7 +251,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score1++;
             score.setText(score1 + " - " + score2);
         }
-        else if(buttons[6].getState() + buttons[7].getState() + buttons[8].getState() == -3) {
+        if(buttons[6].getState() + buttons[7].getState() + buttons[8].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -259,7 +260,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Column 1:
-        else if(buttons[0].getState() + buttons[3].getState() + buttons[6].getState() == 3) {
+        if (buttons[0].getState() + buttons[3].getState() + buttons[6].getState() == 3) {
             label.setText(p1 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -267,7 +268,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score1++;
             score.setText(score1 + " - " + score2);
         }
-        else if(buttons[0].getState() + buttons[3].getState() + buttons[6].getState() == -3) {
+        if(buttons[0].getState() + buttons[3].getState() + buttons[6].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -276,7 +277,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Column 2:
-        else if(buttons[1].getState() + buttons[4].getState() + buttons[7].getState() == 3) {
+        if(buttons[1].getState() + buttons[4].getState() + buttons[7].getState() == 3) {
             label.setText(p1 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -284,7 +285,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score1++;
             score.setText(score1 + " - " + score2);
         }
-        else if(buttons[1].getState() + buttons[4].getState() + buttons[7].getState() == -3) {
+        if(buttons[1].getState() + buttons[4].getState() + buttons[7].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -293,7 +294,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Column 3:
-        else if(buttons[2].getState() + buttons[5].getState() + buttons[8].getState() == 3) {
+        if(buttons[2].getState() + buttons[5].getState() + buttons[8].getState() == 3) {
             label.setText(p1 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -301,7 +302,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score1++;
             score.setText(score1 + " - " + score2);
         }
-        else if(buttons[2].getState() + buttons[5].getState() + buttons[8].getState() == -3) {
+        if(buttons[2].getState() + buttons[5].getState() + buttons[8].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -310,7 +311,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Diagonal 1:
-        else if(buttons[0].getState() + buttons[4].getState() + buttons[8].getState() == 3) {
+        if(buttons[0].getState() + buttons[4].getState() + buttons[8].getState() == 3) {
             label.setText(p1 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -318,7 +319,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score1++;
             score.setText(score1 + " - " + score2);
         }
-        else if(buttons[0].getState() + buttons[4].getState() + buttons[8].getState() == -3) {
+        if(buttons[0].getState() + buttons[4].getState() + buttons[8].getState() == -3) {
             label.setText(p2 + " won!");
             for (int i = 0; i < 9; i++) {
                 buttons[i].setDisable(true);
@@ -327,7 +328,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Diagonal 2:
-        else if(buttons[2].getState() + buttons[4].getState() + buttons[6].getState() == 3) {
+        if(buttons[2].getState() + buttons[4].getState() + buttons[6].getState() == 3) {
             label.setText(p1 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -335,7 +336,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score1++;
             score.setText(score1 + " - " + score2);
         }
-        else if(buttons[2].getState() + buttons[4].getState() + buttons[6].getState() == -3) {
+        if(buttons[2].getState() + buttons[4].getState() + buttons[6].getState() == -3) {
             label.setText(p2 + " won!");
             for(int i= 0; i<9; i++) {
                 buttons[i].setDisable(true);
@@ -344,11 +345,8 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             score.setText(score1 + " - " + score2);
         }
         //Tie:
-        else if (tie == 9){
+        if (tie == 9){
             label.setText("It's a tie!");
-            for(int i= 0; i<9; i++) {
-                buttons[i].setDisable(true);
-            }
         }
     }
 
@@ -357,21 +355,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[0].getState() == 0) {
                 buttons[0].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[1].getState() == 0) {
                 buttons[1].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[2].getState() == 0) {
                 buttons[2].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -380,21 +374,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[3].getState() == 0) {
                 buttons[3].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[5].getState() == 0) {
                 buttons[5].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -403,21 +393,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[6].getState() == 0) {
                 buttons[6].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[7].getState() == 0) {
                 buttons[7].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[8].getState() == 0) {
                 buttons[8].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -426,21 +412,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[0].getState() == 0) {
                 buttons[0].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[3].getState() == 0) {
                 buttons[3].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[6].getState() == 0) {
                 buttons[6].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -449,21 +431,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[1].getState() == 0) {
                 buttons[1].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[7].getState() == 0) {
                 buttons[7].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -472,21 +450,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[2].getState() == 0) {
                 buttons[2].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[5].getState() == 0) {
                 buttons[5].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[8].getState() == 0) {
                 buttons[8].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -495,21 +469,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[0].getState() == 0) {
                 buttons[0].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[8].getState() == 0) {
                 buttons[8].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -518,21 +488,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if (buttons[2].getState() == 0) {
                 buttons[2].setState(-1);
                 tie++;
-                checkScore();
             } else if (buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if (buttons[6].getState() == 0) {
                 buttons[6].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -541,21 +507,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[0].getState() == 0) {
                 buttons[0].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[1].getState() == 0) {
                 buttons[1].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[2].getState() == 0) {
                 buttons[2].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -564,21 +526,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[3].getState() == 0) {
                 buttons[3].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[5].getState() == 0) {
                 buttons[5].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -587,21 +545,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[6].getState() == 0) {
                 buttons[6].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[7].getState() == 0) {
                 buttons[7].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[8].getState() == 0) {
                 buttons[8].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -610,21 +564,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[0].getState() == 0) {
                 buttons[0].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[3].getState() == 0) {
                 buttons[3].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[6].getState() == 0) {
                 buttons[6].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -633,21 +583,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[1].getState() == 0) {
                 buttons[1].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[7].getState() == 0) {
                 buttons[7].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -656,21 +602,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[2].getState() == 0) {
                 buttons[2].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[5].getState() == 0) {
                 buttons[5].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[8].getState() == 0) {
                 buttons[8].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -679,21 +621,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[0].getState() == 0) {
                 buttons[0].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[8].getState() == 0) {
                 buttons[8].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -702,21 +640,17 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
             if(buttons[2].getState() == 0) {
                 buttons[2].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[4].getState() == 0) {
                 buttons[4].setState(-1);
                 tie++;
-                checkScore();
             } else if(buttons[6].getState() == 0) {
                 buttons[6].setState(-1);
                 tie++;
-                checkScore();
             } else {
                 for(GameButton button : buttons) {
                     if(button.getState() == 0) {
                         button.setState(-1);
                         tie++;
-                        checkScore();
                         break;
                     }
                 }
@@ -726,11 +660,11 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 if(button.getState() == 0) {
                     button.setState(-1);
                     tie++;
-                    checkScore();
                     break;
                 }
             }
         }
+        checkScore();
     }
 }
 

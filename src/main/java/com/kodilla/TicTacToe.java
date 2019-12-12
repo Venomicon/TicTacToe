@@ -187,7 +187,6 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
                 if(singlePlayer) {
                     buttons[i].setState(1);
                     tie++;
-                    checkScore();
                     AI();
                 } else if(playerTurn){
                     buttons[i].setState(1);
